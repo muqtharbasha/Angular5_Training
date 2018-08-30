@@ -1,0 +1,8 @@
+<app-hero *ngFor="let hero of allHeroes" [bhagi]="hero"
+         (heroSelected)="onHeroSelected($event)"></app-hero>
+
+<input type="text" [(ngModel)]="heroName" />
+
+<span [ngClass]="className">{{heroName}}</span>
+
+<button (click)="clicked()">Click me!</button>
