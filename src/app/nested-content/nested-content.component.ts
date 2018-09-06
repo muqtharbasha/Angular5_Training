@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestService } from '../services/test.service';
 
 @Component({
   selector: 'app-nested-content',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NestedContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private testService: TestService
+  ) { }
 
   ngOnInit() {
+    this.logTime();
+  }
+
+  logTime() {
+    this.testService.getTime()
+    .subscribe(
+      (time: Date) => {
+        // console.log(`nested component ${time}`);
+      }, (err: Error) => {
+        console.error(err);
+      }, () => {
+        // console.log('Observable completed');
+      }
+    );
   }
 
 }

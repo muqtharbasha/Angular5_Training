@@ -24,7 +24,7 @@ export class HeroComponent implements OnInit, OnChanges {
 
   ngOnChanges(change: SimpleChanges) {
     const name = change['hero'].currentValue;
-    console.log(name);
+    // console.log(name);
     this.className = { 
       'class-checked': true,
        'class-unchecked': !true

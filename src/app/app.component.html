@@ -1,6 +1,8 @@
 <div>
   <app-heroes></app-heroes>
-  
+
+  <hr>
+
   <app-nested-content>
     <p [ngClass]="className">This is the nested component content 1</p>
   </app-nested-content>
@@ -10,7 +12,13 @@
       This is the nested component content 2
     </p>
   </app-nested-content>
+  
+  <hr>
 
+  <app-time></app-time>
+  
+  <hr>
+  
   <label>
     <input type="checkbox" [(ngModel)]="isChecked" />
     Check me!

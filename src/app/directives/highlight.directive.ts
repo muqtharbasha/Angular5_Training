@@ -11,7 +11,7 @@ export class HighlightDirective implements OnInit {
   
   constructor(private elRef: ElementRef, private renderer: Renderer2) {
     // console.log('directive')
-    console.log(elRef.nativeElement);
+    // console.log(elRef.nativeElement);
 
   }
 

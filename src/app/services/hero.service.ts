@@ -1,6 +1,8 @@
+import { Injectable } from "@angular/core";
+import { Observable, Observer } from "rxjs";
+
 import { Hero } from "../heroes/hero.model";
 import { TestService } from "./test.service";
-import { Injectable } from "@angular/core";
 
 @Injectable()
 export class HeroService {
@@ -27,5 +29,14 @@ export class HeroService {
       }, 2000);
     });
     // return this.heroes.slice();
+  }
+
+  getHeroesObservable(): Observable<Hero[]> {
+    return Observable.create((observer: Observer<Hero[]>) => {
+      setTimeout(() => {
+        observer.next(this.heroes.slice());
+        observer.complete();
+      }, 2000);
+    })
   }
 }

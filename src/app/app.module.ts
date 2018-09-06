@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -9,6 +10,7 @@ import { NestedContentComponent } from './nested-content/nested-content.componen
 import { HighlightDirective } from './directives/highlight.directive';
 import { HeroService } from './services/hero.service';
 import { TestService } from './services/test.service';
+import { TimeComponent } from './time/time.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { TestService } from './services/test.service';
     HeroesComponent,
     HeroComponent,
     NestedContentComponent,
-    HighlightDirective
+    HighlightDirective,
+    TimeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     HeroService,
