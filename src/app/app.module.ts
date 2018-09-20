@@ -11,6 +11,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { HeroService } from './services/hero.service';
 import { TestService } from './services/test.service';
 import { TimeComponent } from './time/time.component';
+import { ShortenPipe } from './pipes/shorten/shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TimeComponent } from './time/time.component';
     HeroComponent,
     NestedContentComponent,
     HighlightDirective,
-    TimeComponent
+    TimeComponent,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,

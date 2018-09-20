@@ -1,3 +1,3 @@
 <p (click)="onHeroClick()" appHighlight >
-  {{ hero.name }}
+  {{ hero.name | uppercase | shorten: 6 }}, born on {{ hero.dob | date:"MMM/dd/yyyy" | uppercase }}
 </p>

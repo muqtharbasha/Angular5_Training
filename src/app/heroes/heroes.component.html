@@ -1,4 +1,4 @@
-<app-hero *ngFor="let hero of allHeroes" [bhagi]="hero"
+<app-hero *ngFor="let hero of allHeroes$ | async" [bhagi]="hero"
          (heroSelected)="onHeroSelected($event)"></app-hero>
 
 <input type="text" [(ngModel)]="heroName" />

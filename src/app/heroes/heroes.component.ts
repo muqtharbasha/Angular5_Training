@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from "src/app/heroes/hero.model";
 import { HeroService } from '../services/hero.service';
 import { TestService } from '../services/test.service';
-import { forkJoin } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-heroes',
@@ -11,6 +11,7 @@ import { forkJoin } from 'rxjs';
 })
 export class HeroesComponent implements OnInit {
   allHeroes: Hero[];
+  allHeroes$: Observable<Hero[]>;
   heroName: string = 'Mahesh';
 
   constructor(
@@ -26,12 +27,13 @@ export class HeroesComponent implements OnInit {
     //   }, (err) => {
     //     throw err;
     //   });
-    this.heroService.getHeroesObservable()
-      .subscribe(
-        (data: Hero[]) => {
-          this.allHeroes = data;
-        }
-      )
+    this.allHeroes$ = this.heroService.getHeroesObservable();
+    // this.heroService.getHeroesObservable()
+    //   .subscribe(
+    //     (data: Hero[]) => {
+    //       this.allHeroes = data;
+    //     }
+    //   )
   }
 
   onHeroSelected(data: Hero) {
